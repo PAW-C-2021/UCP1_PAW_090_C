@@ -1,0 +1,42 @@
+﻿@model BookingHotel_090.Models.Transaksi
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Transaksi</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Total Transaksi")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalTransaksi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Customer")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCustomerNavigation.NamaCustomer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Petugas")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdPetugasNavigation.NamaPetugas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Room")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdRoomNavigation.NamaRoom)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdTransaksi">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

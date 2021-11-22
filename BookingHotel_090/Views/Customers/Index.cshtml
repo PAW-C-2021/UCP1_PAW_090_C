@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BookingHotel_090.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<h1>Customer</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Customer")
+            </th>
+            <th>
+                @Html.DisplayName("Jenis Kelamin")
+            </th>
+            <th>
+                @Html.DisplayName("No Hp")
+            </th>
+            <th>
+                @Html.DisplayName("Umur")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaCustomer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JenisKelamin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoHp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Umur)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCustomer"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdCustomer"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCustomer"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
